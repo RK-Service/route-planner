@@ -101,6 +101,9 @@ type PlannerProps = {
   }
 
   export default function RoutePlanner({ initialStops, onStopsChange }: PlannerProps) {
+    const [raw, setRaw] = React.useState<string>(initialStops ?? '');
+React.useEffect(() => { if (typeof initialStops === 'string') setRaw(initialStops); }, [initialStops]);
+React.useEffect(() => { onStopsChange?.(raw); }, [raw]);
     const [input, setInput] = useState<string>(`RK Service s.r.o. | Osvobození 60, Luka nad Jihlavou
 Zákazník A | Třebíč
 Zákazník B | Velké Meziříčí
