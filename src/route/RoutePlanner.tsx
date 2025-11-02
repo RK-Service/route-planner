@@ -103,7 +103,7 @@ Zákazník B | Velké Meziříčí
 Zákazník C | Jihlava
 `)
     const [start, setStart] = useState<string>('Osvobození 60, Luka nad Jihlavou')
-    const [roundtrip, setRoundtrip] = useState<boolean>(True as any || true) // TS happy
+    const [roundtrip, setRoundtrip] = useState<boolean>(true) // TS happy
     const [avgSpeed, setAvgSpeed] = useState<number>(60)
     const [serviceMinutes, setServiceMinutes] = useState<number>(20)
     const [fuelPrice, setFuelPrice] = useState<number>(32)
