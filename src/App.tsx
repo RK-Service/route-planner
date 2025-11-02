@@ -32,6 +32,17 @@ export default function App() {
             <div className="card-title">Plánovač</div>
             <div className="card-sub">Optimalizace, mapa, export CSV/GPX</div>
           </div>
+          {/* Nová sekce: Vyhledávání firem podle IČ/IČO */}
+<div className="card-sub" style={{marginBottom: 8}}>
+  Vyhledej firmu podle IČ/IČO a přidej ji do adresáře
+</div>
+
+<CompanyLookup onAddLine={(line)=>{
+  // Po vyhledání se automaticky přidá firma do adresáře (textového pole)
+  setStopsText(prev => (prev.trim() ? prev + '\n' : '') + line);
+}} />
+
+<hr style={{border:'none', borderTop:'1px solid #e5e7eb', margin:'12px 0'}} />
           <div className="card-body">
             <RoutePlanner initialStops={stopsText} onStopsChange={setStopsText}/>
           </div>
