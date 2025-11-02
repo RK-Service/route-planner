@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import RoutePlanner from './route/RoutePlanner';
 import SimpleDirectory from './components/SimpleDirectory';
+import CompanyLookup from './components/CompanyLookup';
+
 
 export default function App() {
   const [stopsText, setStopsText] = useState('');
