@@ -72,21 +72,21 @@ Zákazník C | Jihlava, Czechia`;
         onChange={e => setText(e.target.value)}
       />
 
-      <div className="mt-2 flex gap-2 flex-wrap">
-        <button className="px-3 py-2 rounded border" onClick={()=>{
-          const lines = text.split(/\r?\n/).map((l)=> isChecked(l) ? l : (l.trim()? '[x] '+l : l));
-          setText(lines.join('\n'));
-        }}>Zaškrtnout vše</button>
+     <div className="mt-2 flex gap-2 flex-wrap">
+  <button className="btn-ghost" onClick={()=>{
+    const lines = text.split(/\r?\n/).map((l)=> isChecked(l) ? l : (l.trim()? '[x] '+l : l));
+    setText(lines.join('\n'));
+  }}>Zaškrtnout vše</button>
 
-        <button className="px-3 py-2 rounded border" onClick={()=>{
-          const lines = text.split(/\r?\n/).map(l => l.replace(/^\s*\[(x|\s)?\]\s*/i,''));
-          setText(lines.join('\n'));
-        }}>Odznačit vše</button>
+  <button className="btn-ghost" onClick={()=>{
+    const lines = text.split(/\r?\n/).map(l => l.replace(/^\s*\[(x|\s)?\]\s*/i,''));
+    setText(lines.join('\n'));
+  }}>Odznačit vše</button>
 
-        <button className="px-3 py-2 rounded bg-black text-white" onClick={addCheckedToPlanner}>
-          Přidat zaškrtnuté do plánovače
-        </button>
-      </div>
+  <button className="btn" onClick={addCheckedToPlanner}>
+    Přidat zaškrtnuté do plánovače
+  </button>
+</div>
 
       <div className="mt-2 text-sm text-gray-600">
         Tip: klikni na řádek v seznamu a rychle ho zaškrtneš/odškrtneš.
