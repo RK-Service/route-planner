@@ -1,3 +1,7 @@
+type PlannerProps = {
+  initialStops?: string;
+  onStopsChange?: (text: string) => void;
+};
   import React, { useMemo, useState } from 'react'
   import { MapContainer, TileLayer, Marker, Polyline, Popup } from 'react-leaflet'
   import L from 'leaflet'
@@ -96,7 +100,7 @@
     URL.revokeObjectURL(url)
   }
 
-  export default function RoutePlanner() {
+  export default function RoutePlanner({ initialStops, onStopsChange }: PlannerProps) {
     const [input, setInput] = useState<string>(`RK Service s.r.o. | Osvobození 60, Luka nad Jihlavou
 Zákazník A | Třebíč
 Zákazník B | Velké Meziříčí
